@@ -15,4 +15,8 @@
     <description>Demo project for Spring Boot</description>
     <!--表示当前项目是一个副项目，以pom文件的形式，供子项目继承-->
     <packaging>pom</packaging>
+    <!--当前父项目包含的所有模块module就是模块的意思-->
+    <modules>
+        <module>csmall-stock</module>
+    </modules>
 </project>
