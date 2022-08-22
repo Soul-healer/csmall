@@ -1,7 +1,11 @@
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/csmall_db?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: root
   application:
     #  为当前项目起名,这个名字会被Nacos记录并使用
-    name: nacos-business
+    name: nacos-cart
   cloud:
     nacos:
       discovery:
