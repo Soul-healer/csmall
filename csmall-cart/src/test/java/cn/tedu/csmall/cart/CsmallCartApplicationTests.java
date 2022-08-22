@@ -1,10 +1,10 @@
-package cn.tedu.csmall.business;
+package cn.tedu.csmall.cart;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CsmallBusinessApplicationTests {
+class CsmallCartApplicationTests {
 
     @Test
     void contextLoads() {
