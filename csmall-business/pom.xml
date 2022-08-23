@@ -39,6 +39,17 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <!--Dubbo依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+        <!--oeder模块业务逻辑层接口-->
+        <dependency>
+            <groupId>cn.tedu</groupId>
+            <artifactId>csmall-order-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

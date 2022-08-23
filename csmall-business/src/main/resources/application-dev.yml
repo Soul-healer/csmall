@@ -8,3 +8,11 @@ spring:
         # 配置Nacos所在的位置,用于注册时提交信息
         server-addr: localhost:8848
         ephemeral: false
+dubbo:
+  protocol:
+    port: -1
+    name: dubboe
+  registry:
+    address: nacos://localhost:8848
+  consumer:
+    check: false

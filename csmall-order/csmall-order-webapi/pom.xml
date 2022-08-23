@@ -24,7 +24,7 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
-        <!--alibaba 数据源德鲁伊-->
+        <!-- alibaba 数据源德鲁伊 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -50,17 +50,18 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-
+        <!-- Dubbo 依赖  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
+        <!--   相关的业务逻辑层接口依赖   -->
         <dependency>
             <groupId>cn.tedu</groupId>
             <artifactId>csmall-order-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <!--   作为消费者,order模块需要调用cart和stock模块的业务逻辑层接口  -->
         <dependency>
             <groupId>cn.tedu</groupId>
             <artifactId>csmall-cart-service</artifactId>
@@ -72,5 +73,4 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 </project>
