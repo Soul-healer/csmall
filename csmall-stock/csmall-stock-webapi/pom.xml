@@ -51,6 +51,18 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+        <!--Dubbo的依赖-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+        <!--为了实现业务逻辑层接口，需要添加业务逻辑层接口项目csmall-stock-service的依赖-->
+        <dependency>
+            <groupId>cn.tedu</groupId>
+            <artifactId>csmall-stock-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
 
 </project>
