@@ -1,4 +1,4 @@
-package cn.tedu.csmall.stock.controller;
+package cn.tedu.csmall.stock.webapi.controller;
 
 import cn.tedu.csmall.commons.pojo.stock.dto.StockReduceCountDTO;
 import cn.tedu.csmall.commons.restful.JsonResult;
@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.swing.*;
 
 @RestController
 @RequestMapping("/base/stock")
