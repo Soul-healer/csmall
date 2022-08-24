@@ -3,6 +3,7 @@ package cn.tedu.csmall.stock.webapi.controller;
 import cn.tedu.csmall.commons.pojo.stock.dto.StockReduceCountDTO;
 import cn.tedu.csmall.commons.restful.JsonResult;
 import cn.tedu.csmall.stock.service.IStockService;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class StockController {
 
     @PostMapping("/reduce/count")
     @ApiOperation("减少商品库存数量")
+    @SentinelResource("减少库存的方法")
     public JsonResult reduceCommodityCount(StockReduceCountDTO stockReduceCountDTO){
         stockService.reduceCommodityCount(stockReduceCountDTO);
         return JsonResult.ok("库存减少已执行");

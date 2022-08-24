@@ -1,9 +1,11 @@
 package cn.tedu.csmall.order.webapi.service.impl;
 
 import cn.tedu.csmall.cart.service.ICartService;
+import cn.tedu.csmall.commons.exception.CoolSharkServiceException;
 import cn.tedu.csmall.commons.pojo.order.dto.OrderAddDTO;
 import cn.tedu.csmall.commons.pojo.order.model.Order;
 import cn.tedu.csmall.commons.pojo.stock.dto.StockReduceCountDTO;
+import cn.tedu.csmall.commons.restful.ResponseCode;
 import cn.tedu.csmall.order.service.IOrderService;
 import cn.tedu.csmall.order.webapi.mapper.OrderMapper;
 import cn.tedu.csmall.stock.service.IStockService;
@@ -48,6 +50,9 @@ public class OrderServiceImpl implements IOrderService {
         Order order=new Order();
         BeanUtils.copyProperties(orderAddDTO,order);
         // 执行新增
+        if(Math.random()<0.5) {
+            throw new CoolSharkServiceException(ResponseCode.BAD_REQUEST, "测试异常");
+        }
         orderMapper.insertOrder(order);
         log.info("新增的订单信息为{}",order);
     }

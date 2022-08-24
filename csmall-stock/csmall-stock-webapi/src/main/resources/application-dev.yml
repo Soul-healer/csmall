@@ -7,6 +7,10 @@ spring:
     #  为当前项目起名,这个名字会被Nacos记录并使用
     name: nacos-stock
   cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8721
     nacos:
       discovery:
         # 配置Nacos所在的位置,用于注册时提交信息
@@ -26,3 +30,10 @@ dubbo:
     #当项目启动时，是否检查当前项目需要的所有Dubbo服务是否是可用状态
     #我们设置它的值为false，表示项目启动时不检查，所需的服务是否可用
     check: false
+seata:
+  tx-service-group: csmall_group
+  service:
+    vgroup-mapping:
+      csmall_group: default
+    grouplist:
+      default: localhost:8091
