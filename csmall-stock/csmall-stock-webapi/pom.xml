@@ -13,7 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>csmall-stock-webapi</name>
     <description>Demo project for Spring Boot</description>
-
     <dependencies>
         <!--web实例-->
         <dependency>
@@ -25,7 +24,7 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
-        <!--alibaba 数据源德鲁伊-->
+        <!-- alibaba 数据源德鲁伊 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -51,12 +50,12 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--Dubbo的依赖-->
+        <!--  Dubbo的依赖  -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
-        <!--为了实现业务逻辑层接口，需要添加业务逻辑层接口项目csmall-stock-service的依赖-->
+        <!--  为了实现业务逻辑层接口,需要添加业务逻辑层接口项目csmall-stock-service的依赖   -->
         <dependency>
             <groupId>cn.tedu</groupId>
             <artifactId>csmall-stock-service</artifactId>
@@ -81,6 +80,8 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+
+
     </dependencies>
 
 
