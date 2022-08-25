@@ -1,0 +1,13 @@
+###三个#是注释也是分隔符，这个文件中每个请求代码之间都要用###分隔
+GET http://localhost:9200
+
+###测试ES的分词功能，运行分词，查看分词效果
+POST http://localhost:9200/_analyze
+Content-Type: application/json
+
+{
+  "text": "罗技激光鼠标",
+  "analyzer": "ik_max_word"
+}
+
+###我爱北京天安门广场 速度:ik_smart 查询率:ik_max_word
