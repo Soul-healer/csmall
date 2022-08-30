@@ -5,16 +5,21 @@ import cn.tedu.csmall.commons.exception.CoolSharkServiceException;
 import cn.tedu.csmall.commons.pojo.order.dto.OrderAddDTO;
 import cn.tedu.csmall.commons.pojo.order.model.Order;
 import cn.tedu.csmall.commons.pojo.stock.dto.StockReduceCountDTO;
+import cn.tedu.csmall.commons.restful.JsonPage;
 import cn.tedu.csmall.commons.restful.ResponseCode;
 import cn.tedu.csmall.order.service.IOrderService;
 import cn.tedu.csmall.order.webapi.mapper.OrderMapper;
 import cn.tedu.csmall.stock.service.IStockService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 // Order模块既是生产者也是消费者,所以作为生产者,还是要编写@DubboService
 @DubboService
@@ -55,6 +60,14 @@ public class OrderServiceImpl implements IOrderService {
         }
         orderMapper.insertOrder(order);
         log.info("新增的订单信息为{}",order);
+
     }
+    public JsonPage<Order> getAllOrderByPage(Integer page, Integer pageSize){
+        PageHelper.startPage(page,pageSize);
+        List<Order> list=orderMapper.findAllOrders();
+        return JsonPage.restPage(new PageInfo<>(list));
+    }
+
+
 }
 
