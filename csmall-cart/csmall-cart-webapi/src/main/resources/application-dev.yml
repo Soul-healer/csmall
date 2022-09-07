@@ -1,4 +1,12 @@
 spring:
+  kafka:
+    # 定义kafka的配置信息:确定kafka的ip和端口
+    bootstrap-servers: localhost:9092
+    # consumer.group-id必须设置的配置
+    # 意思是"话题分组",这个配置的目的是为了区分不同的项目而配置的
+    # 本质上,这个分组名称会前缀在所有话题名名称之前,例如话题名称为message,真正发送时csmall.message
+    consumer:
+      group-id: csmall
   datasource:
     url: jdbc:mysql://localhost:3306/csmall_db?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
     username: root
@@ -11,6 +19,7 @@ spring:
       discovery:
         # 配置Nacos所在的位置,用于注册时提交信息
         server-addr: localhost:8848
+
 dubbo:
   protocol:
     port: -1
@@ -19,10 +28,14 @@ dubbo:
     address: nacos://localhost:8848
   consumer:
     check: false
+    timeout: 50000
 seata:
-  tx-service-group: csmall_group
+  tx-service-group: csmall_group  # 定义分组名称,为了与其它项目区分
   service:
     vgroup-mapping:
-      csmall_group: default
+      csmall_group: default       # csmall_group分组使用Seata的默认配置完成事务
     grouplist:
-      default: localhost:8091
+      default: localhost:8091     # 配置seata的地址和端口号(8091是默认端口号)
+
+
+

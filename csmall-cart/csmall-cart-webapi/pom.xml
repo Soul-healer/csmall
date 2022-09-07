@@ -13,7 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>csmall-cart-webapi</name>
     <description>Demo project for Spring Boot</description>
-
     <dependencies>
         <!--web实例-->
         <dependency>
@@ -25,7 +24,7 @@
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
-        <!--alibaba 数据源德鲁伊-->
+        <!-- alibaba 数据源德鲁伊 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -51,7 +50,7 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-
+        <!-- Dubbo 的依赖 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
@@ -75,5 +74,16 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+        <!--  添加kafka的依赖  -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <!--   能够将java对象和json字符串相互转换的依赖   -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
     </dependencies>
+
 </project>
