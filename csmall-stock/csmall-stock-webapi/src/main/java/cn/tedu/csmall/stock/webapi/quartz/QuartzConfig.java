@@ -31,11 +31,11 @@ public class QuartzConfig {
         CronScheduleBuilder cron=CronScheduleBuilder.cronSchedule("0/10 * * * * ?");
         return TriggerBuilder.newTrigger()
                 //绑定要运行的JobDetail对象
-        .forJob(showTime())
+                .forJob(showTime())
                 //为触发器起名
-        .withIdentity("dataTrigger")
+                .withIdentity("dataTrigger")
                 //绑定cron表达式
-        .withSchedule(cron)
+                .withSchedule(cron)
                 .build();
     }
 
